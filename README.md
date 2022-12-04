@@ -6,7 +6,7 @@
 - [ ] implement first simple "service infrastructure" or "containerization concept"
 
 ## Setup
-These `npm` scripts are currently configured:
+These npm scripts are currently configured:
 ```sh
 npm run start        # Builds the project
 npm run start:dev    # Auto-refreshing "watch"-mode (for development)
@@ -16,9 +16,18 @@ npm run docker:run   # 2) Runs a docker container instance
 ```
 ### Dockerization
 To run the project inside a docker container, the following must be done:
+
+**Build a docker image**
 ```sh
-npm run docker:build # docker build . -t "osx-herz-bot"
-npm run docker:run   # docker run "osx-herz-bot"
+npm run docker:build # alias for: docker build . -t "osx-herz-bot"
+```
+**Create `.env` file with port to run on**
+```sh
+echo "PORT = 8008" > .env
+```
+**Run a container using the image**
+```sh
+npm run docker:run   # alias for: docker run "osx-herz-bot"
 ```
 
 ### OSX Shortcut
