@@ -1,5 +1,5 @@
 import { ResultAction } from "../actions";
-import { ActionHandler } from "./action-handler";
+import { ActionHandler } from "../../lib/action-handler";
 
 export const HelpHandler: () => ActionHandler = () => {
   return (req, res) => {

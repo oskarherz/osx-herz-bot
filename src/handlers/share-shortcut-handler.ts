@@ -1,4 +1,4 @@
-import { ActionHandler } from "./action-handler";
+import { ActionHandler, WithProps } from "../../lib/action-handler";
 import { OptionsAction, ResultAction, ResultActionFormat } from "../actions";
 
 
@@ -27,3 +27,7 @@ export const ShareShortcutHandler: ActionHandler = (req, res) => {
     res.send(optionsAction);
   }
 };
+
+export default WithProps(ShareShortcutHandler, {
+  keywords: ["share", "shortcut"]
+});

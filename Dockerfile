@@ -11,6 +11,7 @@ WORKDIR /home/node/app
 # where available (npm@5+)
 COPY --chown=node:node package*.json .
 COPY --chown=node:node tsconfig.json .
+COPY --chown=node:node .env .
 
 RUN npm install
 # If you are building your code for production
@@ -18,7 +19,8 @@ RUN npm install
 
 # Bundle app source
 COPY --chown=node:node src/ src/
+COPY --chown=node:node lib/ lib/
 
-RUN export $(cat .env) && npm start
+RUN npm start
 
-CMD [ "node", "build/index.js" ]
+CMD [ "node", "build/src/index.js" ]

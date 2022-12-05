@@ -1,7 +1,7 @@
 import { fetch } from "cross-fetch";
 
 import { OptionsAction, ResultAction } from "../actions";
-import { ActionHandler } from "./action-handler";
+import { ActionHandler, WithProps } from "../../lib/action-handler";
 
 
 export const StatusHandler: ActionHandler = async (req, res) => {
@@ -58,3 +58,7 @@ function getPromptForStatus(serviceName: string, status: boolean | null): string
     case false: return `Service "${serviceName}" appears to be offline! 🤖`;
   }
 }
+
+export default WithProps(StatusHandler, {
+  keywords: ["status"]
+});

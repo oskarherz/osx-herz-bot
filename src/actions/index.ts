@@ -1,3 +1,3 @@
-export * from './action';
-export * from './options-action';
-export * from './result-action';
+export * from "../../lib/action";
+export * from "./options-action";
+export * from "./result-action";

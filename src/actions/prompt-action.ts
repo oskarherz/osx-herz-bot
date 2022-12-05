@@ -1,4 +1,4 @@
-import { Action } from "./action";
+import { Action } from "../../lib/action";
 
 export interface PromptAction extends Action {
   type: "prompt";

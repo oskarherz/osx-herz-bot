@@ -1,6 +1,6 @@
 import { ResultAction } from "../actions";
 import { PromptAction } from "../actions/prompt-action";
-import { ActionHandler } from "./action-handler";
+import { ActionHandler, WithProps } from "../../lib/action-handler";
 
 export const TalkHandler: ActionHandler = (req, res) => {
   
@@ -31,3 +31,7 @@ export const TalkHandler: ActionHandler = (req, res) => {
     }
   }
 };
+
+export default WithProps(TalkHandler, {
+  keywords: ["talk", "chat"]
+});

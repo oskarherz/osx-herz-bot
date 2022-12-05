@@ -1,5 +1,5 @@
 import { ResultAction, OptionsAction } from "../actions";
-import { ActionHandler } from "./action-handler";
+import { ActionHandler } from "../../lib/action-handler";
 
 type UserResponse = `option-${1 | 2 | 3}`;
 

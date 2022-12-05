@@ -2,7 +2,7 @@ import { exec } from "child_process";
 
 import { ResultAction } from "../actions";
 import { PromptAction } from "../actions/prompt-action";
-import { ActionHandler } from "./action-handler";
+import { ActionHandler, WithProps } from "../../lib/action-handler";
 
 
 export const ShellHandler: ActionHandler = async (req, res) => {
@@ -40,3 +40,7 @@ async function runShellCommand(command: string): Promise<string> {
     });
   });
 }
+
+export default WithProps(ShellHandler, {
+  keywords: ["shell", "sh"]
+});

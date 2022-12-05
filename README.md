@@ -1,6 +1,7 @@
 # osx-herz-bot
 
 **TODOs**
+- [ ] Fix Docker container!
 - [ ] improve setting of server address inside shortcut ("Question" before Shortcut install?)
 - [ ] refactor registering, so it can be done during runtime
 - [ ] implement first simple "service infrastructure" or "containerization concept"
@@ -19,7 +20,7 @@ To run the project inside a docker container, the following must be done:
 
 **Build a docker image**
 ```sh
-npm run docker:build # alias for: docker build . -t "osx-herz-bot"
+npm run docker:build # alias for: docker run "osx-herz-bot" --env-file .env
 ```
 **Create `.env` file with port to run on**
 ```sh

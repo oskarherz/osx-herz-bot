@@ -1,4 +1,4 @@
-import { ActionHandler } from "./action-handler";
+import { ActionHandler, WithProps } from "../../lib/action-handler";
 
 export const HelloHandler: ActionHandler = (req, res) => {
   const userQuery = req.query.response as string;
@@ -8,3 +8,7 @@ export const HelloHandler: ActionHandler = (req, res) => {
 
   res.redirect(`/bot/actions/${command}?response=${response}`);
 };
+
+export default WithProps(HelloHandler, {
+  keywords: ["hello"]
+});
